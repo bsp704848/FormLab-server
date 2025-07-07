@@ -9,7 +9,13 @@ import authRouter from './routes/auth.js'
 dotenv.config();
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://form-lab-nu.vercel.app'
+  ],
+  credentials: true,
+}));
 app.use(json());
 
 
